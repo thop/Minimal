@@ -52,7 +52,8 @@ function formatDate(date, format) {
         return date.toISOString().replace(/\.[0-9]*Z/, "Z")
     }
     if (format === "user") {
-        return date.toLocaleDateString("en-US", { month: "short"}) + " " + date.getDate() + ", " + date.getFullYear();
+        var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     }
     return ""
 }
